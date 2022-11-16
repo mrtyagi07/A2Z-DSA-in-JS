@@ -63,14 +63,25 @@ function main() {
 
 class Solution {
     pushZerosToEnd(arr,n){
-     let index=0;
-     for(let i=0;i<n;i++){
-         if(arr[i]!==0){
-             arr[index++]=arr[i]
-         }
-     }
-     while(index<n){
-            arr[index++] = 0;
+    //  let index=0;
+    //  for(let i=0;i<n;i++){
+    //      if(arr[i]!==0){
+    //          arr[index++]=arr[i]
+    //      }
+    //  }
+    //  while(index<n){
+    //         arr[index++] = 0;
+    //     }
+    
+     // O(n) Time Complexity
+	// 2 Pointers
+    let left = 0;
+    
+    for(let i = 0; i < n; i++) {
+        if(arr[i]!==0) {
+            [arr[i], arr[left]] = [arr[left], arr[i]];
+            left++;
         }
+    }
     }
 }
