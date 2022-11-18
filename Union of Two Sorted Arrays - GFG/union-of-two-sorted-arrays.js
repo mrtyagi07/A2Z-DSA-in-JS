@@ -73,10 +73,11 @@ class Solution {
     //Function to return a list containing the union of the two arrays. 
     findUnion(arr1, arr2, n, m)
     {
-   let union=arr1.concat(arr2);
-  let sorted=  union.sort((a, b) => a - b);
-  let unique=  [...new Set(sorted)];
-
-    return [...unique];
+        //1. Concat the both array
+        //2. Sort the Array in Ascending Order
+        //3. Apply Set on union and it will retun new array with distinct Values
+   let union=arr1.concat(arr2).sort((a, b) => a - b);
+   let unique=  [...new Set(union)];
+     return [...unique];
     }
 }
