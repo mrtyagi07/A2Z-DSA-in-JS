@@ -66,12 +66,27 @@ function main() {
 class Solution {
     
     matSearch(matrix, N, M, X){
-       for(let i=0;i<N;i++){
-           for(let j=0;j<M;j++){
-               if(matrix[i][j]===X)
-               return 1;
-           }
-       }
-       return 0;
+        
+        //n^2
+    //   for(let i=0;i<N;i++){
+    //       for(let j=0;j<M;j++){
+    //           if(matrix[i][j]===X)
+    //           return 1;
+    //       }
+    //   }
+    //   return 0;
+    
+    let rows = N,cols = M,row = 0, col = cols-1;
+			
+        while (row < rows && col > -1) {
+            let cur = matrix[row][col];
+            if (cur === X) return 1;
+            if (X > cur) row++;
+            else col--;
+        }
+        
+        return 0;
+    
+    
     }
 }
